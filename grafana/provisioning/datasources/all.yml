@@ -1,0 +1,9 @@
+datasources:
+-  access: 'proxy'
+   editable: true
+   is_default: true
+   name: 'Graphite'
+   org_id: 1
+   type: 'graphite'
+   url: 'http://host.docker.internal:80'
+   version: 1

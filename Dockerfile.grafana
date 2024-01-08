@@ -1,0 +1,10 @@
+FROM grafana/grafana:latest
+
+ADD ./grafana/provisioning /etc/grafana/provisioning
+ADD ./grafana/dashboards /tmp/grafana/dashboards
+
+COPY scripts/init-grafana.sh init.sh
+
+USER root
+
+ENTRYPOINT ["/bin/sh", "init.sh"]

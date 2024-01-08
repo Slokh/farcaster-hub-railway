@@ -1,9 +1,5 @@
 #!/bin/sh
 
-if [ ! -d "./.hubble" ]; then
-  mkdir -p ./.hubble
-fi
-
 if [ ! -d "./.hubble/.rocks" ]; then
   mkdir -p ./.hubble/.rocks
 fi
@@ -19,4 +15,9 @@ exec node build/cli.js start \
     --network 1 \
     -m $ETH_MAINNET_RPC_URL \
     -l $OPTIMISM_L2_RPC_URL \
-    --hub-operator-fid $HUB_OPERATOR_FID
+    --hub-operator-fid $HUB_OPERATOR_FID \
+    --ip 0.0.0.0 \
+    --gossip-port 2282 \
+    --rpc-port 2283 \
+    --rpc-subscribe-per-ip-limit 4 \
+    --statsd-metrics-server $STATSD_METRICS_SERVER
