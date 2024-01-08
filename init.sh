@@ -1,5 +1,9 @@
 #!/bin/sh
 
+if [ ! -d "./.hubble" ]; then
+  mkdir -p ./.hubble
+fi
+
 if [ ! -d "./.hubble/.rocks" ]; then
   mkdir -p ./.hubble/.rocks
 fi
